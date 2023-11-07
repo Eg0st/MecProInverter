@@ -1,0 +1,4 @@
+(sym_lib_table
+  (version 7)
+  (lib (name "LVE2560E")(type "KiCad")(uri "C:/GitHub/MecProInverter/electronic/own_library/LVE2560E.kicad_sym")(options "")(descr ""))
+)
