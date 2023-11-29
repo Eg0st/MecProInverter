@@ -1,15 +1,16 @@
+#ifndef SINUS_GE
+#define SINUS_GE
+
 #include <stdio.h>
 
-constexpr float PI_n = __builtin_atan(1) * 4;
-typedef unsigned char byte;
-
-class sinustab_t
+namespace Sin_Gen
 {
-  private:
-    byte a[256];
+  extern const float PI_n;
+  typedef unsigned char byte;
+  extern byte SinTab[256];
+  
+  void Sin_Tab();
+  int16_t sin(uint16_t w);
+}
 
-  public:
-    sinustab_t();
-
-    int16_t sin(uint16_t w) const;
-};
+#endif

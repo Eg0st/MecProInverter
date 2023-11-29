@@ -1,7 +1,7 @@
 #ifndef STATE_MACHINE_H
 #define STATE_MACHINE_H
 
-#include "conf.hpp"
+#include "Projekt_Mechatronik.hpp"
 #include "TState_Machine.hpp"
 #include "states.hpp"
 #include "Interface_Struct.hpp"

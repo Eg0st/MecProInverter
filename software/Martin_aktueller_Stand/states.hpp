@@ -1,7 +1,7 @@
 #ifndef STATES_H
 #define STATES_H
 #include "IState.hpp"
-#include "conf.hpp"
+#include "Projekt_Mechatronik.hpp"
 
 class Power_Up: public ISTate<class State_Machine, struct Interface>
 {
