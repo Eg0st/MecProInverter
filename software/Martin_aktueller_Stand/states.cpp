@@ -1,16 +1,13 @@
 #include "states.hpp"
 
-#define SCREEN_WIDTH 128
-#define SCREEN_HEIGHT 64
 
-using namespace std;
 void Power_Up::enter(State_Machine* pOwner, Interface* interface)
 {
 
 }
 void Power_Up::Execute(State_Machine* pOwner,Interface* interface)
 {
-  PROGMEM sinustab_t sinustab; //wurde auch zu dem ESP32 exportiert
+  PROGMEM Sin_Gen::Sin_Tab(); //wurde auch zu dem ESP32 exportiert
   interface->display=Adafruit_SSD1306(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, -1);
   interface->error_flag_pwr+=(!(interface->display).begin(SSD1306_SWITCHCAPVCC, 0x3C));
   // State Transition

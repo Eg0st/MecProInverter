@@ -1,7 +1,7 @@
 #ifndef INTERFACE_STRUCT_H
 #define INTERFACE_STRUCT_H
 
-#include "conf.hpp"
+#include "Projekt_Mechatronik.hpp"
 
 //hier sollen alle Strukturen rein, die als Interface dienen, um Daten zw. den Klassen zu transportieren
 struct Interface{
