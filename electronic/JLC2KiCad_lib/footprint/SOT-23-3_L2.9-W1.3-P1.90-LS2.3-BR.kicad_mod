@@ -36,12 +36,7 @@
   (pad "1" smd rect (at 0.990221 0.949962) (size 1.070003 0.532004) (layers "F.Cu" "F.Paste" "F.Mask") (tstamp 3b544fec-ef57-4130-8aed-8d12fa6208ca))
   (pad "2" smd rect (at 0.990221 -0.949962) (size 1.070003 0.532004) (layers "F.Cu" "F.Paste" "F.Mask") (tstamp 473c0bb9-ae52-4e67-af96-80bc899d5b78))
   (pad "3" smd rect (at -0.990221 0) (size 1.070003 0.532004) (layers "F.Cu" "F.Paste" "F.Mask") (tstamp 4b44ea32-0284-41cf-a17c-9d7616669e7b))
-  (model "JLC2KiCad_lib/footprint/packages3d/SOT-23-3_L2.9-W1.3-P1.90-LS2.3-BR.step"
-    (offset (xyz 0 0 0))
-    (scale (xyz 1 1 1))
-    (rotate (xyz 0 0 0))
-  )
-  (model "${KICAD_JLCPCB_3D}/SOT-23-3_L2.9-W1.3-P1.90-LS2.3-BR.step"
+  (model "C:/GitHub/MecProInverter/electronic/JLC2KiCad_lib/footprint/packages3d/SOT-23-3_L2.9-W1.3-P1.90-LS2.3-BR.step"
     (offset (xyz 0 0 0.7))
     (scale (xyz 1 1 1))
     (rotate (xyz 0 0 -90))
