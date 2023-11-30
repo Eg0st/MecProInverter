@@ -1,4 +1,4 @@
-22377182947904452
+22406103841576124
 Audio_Module
 Reverb_BTDR-1H
 Digital Reverberation Unit, http://www.belton.co.kr/inc/downfile.php?seq=17&file=pdf (footprint from http://www.uk-electronic.de/PDF/BTDR-1.pdf)
@@ -55033,6 +55033,118 @@ emi filter
 0
 5
 5
+Footprint
+BULETM-SMD_ESP32-S3-MINI-1-N8
+BULETM-SMD_ESP32-S3-MINI-1-N8 footprint
+BULETM-SMD_ESP32-S3-MINI-1-N8 footprint
+0
+73
+61
+Footprint
+CONN-TH_3P-P2.54_22-23-2031
+CONN-TH_3P-P2.54_22-23-2031 footprint
+CONN-TH_3P-P2.54_22-23-2031 footprint
+0
+3
+3
+Footprint
+CONN-TH_KF2510-3AW
+CONN-TH_KF2510-3AW footprint
+CONN-TH_KF2510-3AW footprint
+0
+3
+3
+Footprint
+DIP-24_L36.0-W21.0-P1.60-LS28.6-TL
+DIP-24_L36.0-W21.0-P1.60-LS28.6-TL footprint
+DIP-24_L36.0-W21.0-P1.60-LS28.6-TL footprint
+0
+24
+24
+Footprint
+KEY-SMD_4P-L6.1-W6.1-P4.50-LS9.0
+KEY-SMD_4P-L6.1-W6.1-P4.50-LS9.0 footprint
+KEY-SMD_4P-L6.1-W6.1-P4.50-LS9.0 footprint
+0
+4
+4
+Footprint
+RES-ADJ-TH_RK09D1130C4G
+RES-ADJ-TH_RK09D1130C4G footprint
+RES-ADJ-TH_RK09D1130C4G footprint
+0
+5
+5
+Footprint
+SOIC-8_L4.9-W3.9-P1.27-LS6.0-BL
+SOIC-8_L4.9-W3.9-P1.27-LS6.0-BL footprint
+SOIC-8_L4.9-W3.9-P1.27-LS6.0-BL footprint
+0
+8
+8
+Footprint
+SOIC-16_L10.3-W7.5-P1.27-LS10.3-BL
+SOIC-16_L10.3-W7.5-P1.27-LS10.3-BL footprint
+SOIC-16_L10.3-W7.5-P1.27-LS10.3-BL footprint
+0
+16
+16
+Footprint
+SOP-8_L4.9-W3.9-P1.27-LS6.0-BL
+SOP-8_L4.9-W3.9-P1.27-LS6.0-BL footprint
+SOP-8_L4.9-W3.9-P1.27-LS6.0-BL footprint
+0
+8
+8
+Footprint
+SOT-23-3_L2.9-W1.3-P1.90-LS2.3-BR
+SOT-23-3_L2.9-W1.3-P1.90-LS2.3-BR footprint
+SOT-23-3_L2.9-W1.3-P1.90-LS2.3-BR footprint
+0
+3
+3
+Footprint
+SOT-23-3_L2.9-W1.3-P1.90-LS2.4-BR
+SOT-23-3_L2.9-W1.3-P1.90-LS2.4-BR footprint
+SOT-23-3_L2.9-W1.3-P1.90-LS2.4-BR footprint
+0
+3
+3
+Footprint
+SOT-23-6_L2.9-W1.6-P0.95-LS2.8-BL
+SOT-23-6_L2.9-W1.6-P0.95-LS2.8-BL footprint
+SOT-23-6_L2.9-W1.6-P0.95-LS2.8-BL footprint
+0
+6
+6
+Footprint
+SOT-23_L2.9-W1.3-P1.90-LS2.4-BR
+SOT-23_L2.9-W1.3-P1.90-LS2.4-BR footprint
+SOT-23_L2.9-W1.3-P1.90-LS2.4-BR footprint
+0
+3
+3
+Footprint
+SW-SMD_L3.9-W3.0-P4.45
+SW-SMD_L3.9-W3.0-P4.45 footprint
+SW-SMD_L3.9-W3.0-P4.45 footprint
+0
+2
+2
+Footprint
+USB-C-SMD_TYPE-C-6PIN-2MD-073
+USB-C-SMD_TYPE-C-6PIN-2MD-073 footprint
+USB-C-SMD_TYPE-C-6PIN-2MD-073 footprint
+0
+16
+14
+Footprint
+WQFN-16_L3.0-W3.0-P0.50-TL-EP1.7
+WQFN-16_L3.0-W3.0-P0.50-TL-EP1.7 footprint
+WQFN-16_L3.0-W3.0-P0.50-TL-EP1.7 footprint
+0
+17
+17
 Fuse
 Fuse_0402_1005Metric
 Fuse SMD 0402 (1005 Metric), square (rectangular) end terminal, IPC_7351 nominal, (Body size source: http://www.tortai-tech.com/upload/download/2011102023233369053.pdf), generated with kicad-footprint-generator
@@ -66058,7 +66170,14 @@ DIL DIP PDIP 2.54mm 7.62mm 300mil
 0
 4
 4
-Own_Library
+Own_Footprint
+ESMQ351VSN102MA50S
+
+ESMQ351VSN102MA50S 
+0
+2
+2
+Own_Footprint
 LVE2560E
 
 
