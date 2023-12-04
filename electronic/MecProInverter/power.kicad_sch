@@ -4758,7 +4758,7 @@
     (property "Value" " LVE2560E" (at 90.805 123.19 0)
       (effects (font (size 1.27 1.27)))
     )
-    (property "Footprint" "Own_Library:LVE2560E" (at 80.01 149.86 0)
+    (property "Footprint" "Own_Footprint:LVE2560E" (at 80.01 149.86 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "" (at 80.01 149.86 0)

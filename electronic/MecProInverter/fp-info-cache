@@ -1,4 +1,4 @@
-22406103841576124
+22407805364324417
 Audio_Module
 Reverb_BTDR-1H
 Digital Reverberation Unit, http://www.belton.co.kr/inc/downfile.php?seq=17&file=pdf (footprint from http://www.uk-electronic.de/PDF/BTDR-1.pdf)
@@ -66170,6 +66170,13 @@ DIL DIP PDIP 2.54mm 7.62mm 300mil
 0
 4
 4
+Own_Footprint
+Adafruit_938
+
+
+0
+8
+8
 Own_Footprint
 ESMQ351VSN102MA50S
 

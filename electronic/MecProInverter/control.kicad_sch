@@ -7575,7 +7575,7 @@
     (property "Value" "Display" (at 525.78 312.42 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Footprint" "Connector_PinSocket_2.54mm:PinSocket_1x08_P2.54mm_Vertical" (at 523.24 309.88 0)
+    (property "Footprint" "Own_Footprint:Adafruit_938" (at 523.24 309.88 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "~" (at 523.24 309.88 0)
