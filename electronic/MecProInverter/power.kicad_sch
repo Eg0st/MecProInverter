@@ -6732,7 +6732,7 @@
           (reference "D1") (unit 1)
         )
         (path "/c9071429-8b0d-45bf-aa6d-71cc2b7f068c/c32f479b-361e-4c54-ac43-ed36ba4d4493"
-          (reference "D2") (unit 1)
+          (reference "D15V1") (unit 1)
         )
       )
     )
@@ -6941,7 +6941,7 @@
           (reference "D2") (unit 1)
         )
         (path "/c9071429-8b0d-45bf-aa6d-71cc2b7f068c/c32f479b-361e-4c54-ac43-ed36ba4d4493"
-          (reference "D1") (unit 1)
+          (reference "D3V3") (unit 1)
         )
       )
     )
