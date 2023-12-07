@@ -1,0 +1,6 @@
+Hinweis: Platzierungsdatei der Vorderseite (Oberseite): "C:\GitHub\MecProInverter\electronic\MecProInverter\Gerber\MecProInverter-top-pos.csv".
+Hinweis: Bauteilmenge: 165.
+Hinweis: Platzierungsdatei der Rückseite (Unterseite): "C:\GitHub\MecProInverter\electronic\MecProInverter\Gerber\MecProInverter-bottom-pos.csv".
+Hinweis: Bauteilmenge: 7.
+Hinweis: Gesamtmenge der Bauteile: 172.
+Hinweis: Datei erfolgreich erstellt.
