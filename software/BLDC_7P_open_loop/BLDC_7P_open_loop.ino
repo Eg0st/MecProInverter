@@ -1,21 +1,24 @@
 #include <SimpleFOC.h>
 
-#define PIN_IPH1 A15 //ADC2_5 == A15
-#define PIN_IPH2 A16 //ADC2_6 == A16 
-#define PIN_IPH3 A17 //ADC2_7 == A17
+#define 
 
 
+
+
+#define PIN_IPH1 15 //ADC2_5 == A15
+#define PIN_IPH2 16 //ADC2_6 == A16 
+#define PIN_IPH3 17 //ADC2_7 == A17
 
 #define HALL_PH1 19 
 #define HALL_PH2 18 
 #define HALL_PH3 5
 
-#define PIN_PH1_H 18 //23
-#define PIN_PH2_H 17 //1
-#define PIN_PH3_H 32
-#define PIN_PH1_L 33
-#define PIN_PH2_L 25
-#define PIN_PH3_L 26
+#define PIN_PH1_H 1 //23
+#define PIN_PH2_H 2 //1
+#define PIN_PH3_H 3
+#define PIN_PH1_L 4
+#define PIN_PH2_L 5
+#define PIN_PH3_L 6
 
 #define CURRENT_SENSE_GAIN -40.633
 #define NBR_POLE_PAIRS 7
@@ -37,10 +40,10 @@ uint8_t hall_sensor_state;
 void setup() {
   // monitoring port
   Serial.begin(115200);
-  Serial.print("Serial begin...");
+  Serial.print("[INFO] Serial begin.");
 
   // init magnetic sensor hardware
-  as5600.init();
+  //as5600.init();
 
   pinMode(PIN_IPH1, INPUT);
   pinMode(PIN_IPH2, INPUT);
@@ -56,7 +59,7 @@ void setup() {
   pinMode(PIN_PH1_L, OUTPUT);
   pinMode(PIN_PH2_L, OUTPUT);
   pinMode(PIN_PH3_L, OUTPUT);
-
+ 
   digitalWrite(PIN_PH1_H, LOW);
   digitalWrite(PIN_PH2_H, LOW);
   digitalWrite(PIN_PH3_H, LOW);
@@ -64,13 +67,17 @@ void setup() {
   digitalWrite(PIN_PH2_L, LOW);
   digitalWrite(PIN_PH3_L, LOW);
 
-driver.pwm_frequency = 20000;
-driver.dead_zone = 0.05;
-driver.voltage_power_supply = 12;
-driver.voltage_limit = 12;
-driver.init();
-//driver.enable();
-//current_sense.init();
+  Serial.print("[INFO] Pin init.");
+
+  driver.pwm_frequency = 20000;
+  driver.dead_zone = 0.05;
+  driver.voltage_power_supply = 12;
+  driver.voltage_limit = 12;
+  Serial.print("[INFO] Driver init.");
+  driver.init();
+  Serial.print("[INFO] Init fertig.");
+  driver.enable();
+  //current_sense.init();
   motor.linkDriver(&driver);
 
   motor.voltage_limit = 3;   // [V]
@@ -84,6 +91,7 @@ _delay(1000);
 }
 
 void loop() {
+  Serial.print("[INFO] Loop start.");
   motor.move(40);
 
   
