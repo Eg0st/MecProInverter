@@ -42,7 +42,42 @@ using namespace std;
 #define PIN_PH2_L 25
 #define PIN_PH3_L 26
 
+#define FAN_CONTROL_PIN 1
+#define VFO 2
+#define POT1 4
+#define SW1 5
+#define SW2 6
+#define SW3 7
+#define I2C_SDA 8
+#define I2C_SLK 9
 
+#define LINW 10
+#define LINV 11
+#define LINU 12
+#define HINW 13
+#define HINV 14
+#define HINU 15
 
+#define RELAY_SHUNT_AC 16
+#define RGBLED 17
+#define TEMP_HEATSINK 18
+
+#define UART_TX 00
+#define UART_RX 00
+
+#define USB_N 19
+#define USB_P 20
+
+#define ISO_GPIO_1 21
+#define ISO_GPIO_2 38
+
+#define I_TRIP 28
+#define SPI_CS 34
+#define SPI_MOSI 35
+#define SPI_CLK 36
+#define SPI_MISO 37
+
+#define FAN1_PWM_FB 48
+#define FAN2_PWM_FB 47
 
 #endif
