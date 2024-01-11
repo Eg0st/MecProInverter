@@ -37,8 +37,13 @@ TwoWire*twowire=new TwoWire(BUS_NUM);
 void setup()
 {
   USBSerial.begin(115200);
+  delay(3000);
+  while(!USBSerial);
+  USBSerial.println("Serial begin.");
+
   twowire->begin(I2C_SDA,I2C_SLK);
-  TLA2528::StartUp_TLA2528(twowire);
+  USBSerial.print("TLA2528::StartUp_TLA2528: ");
+  USBSerial.println(TLA2528::StartUp_TLA2528(twowire));
   RGB_LED::begin();
 }
 
@@ -48,6 +53,7 @@ void loop()
   USBSerial.println("Voltage: ");
   USBSerial.println(TLA2528::man_CHA_Read(twowire,V_15));
   USBSerial.println(TLA2528::man_CHA_Read(twowire,V_3_3));
+  USBSerial.println(TLA2528::man_CHA_Read(twowire,V_TANK));
   delay(1000);
 }
 #endif
