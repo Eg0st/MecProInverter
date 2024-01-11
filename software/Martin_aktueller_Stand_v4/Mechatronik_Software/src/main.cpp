@@ -11,17 +11,17 @@ BLDCMotor*motor;
 void setup()
 {
 
-  Serial.begin(115200);
+  USBSerial.begin(115200);
   
   FOC::init(driver,motor);
-  Serial.println("Test");
+  USBSerial.println("Test");
   
 }
 
 void loop()
 {
-  
-  FOC::PWM_Generation(driver,motor,2*PI*FREQUENZ);
+  //USBSerial.print(".");
+  //FOC::PWM_Generation(driver,motor,2*PI*FREQUENZ);
   
 }
 
@@ -36,14 +36,25 @@ TwoWire*twowire=new TwoWire(BUS_NUM);
 
 void setup()
 {
-  Serial.begin(115200);
+  USBSerial.begin(115200);
+  delay(3000);
+  while(!USBSerial);
+  USBSerial.println("Serial begin.");
+
   twowire->begin(I2C_SDA,I2C_SLK);
-  TLA2528::StartUp_TLA2528(twowire);
+  USBSerial.print("TLA2528::StartUp_TLA2528: ");
+  USBSerial.println(TLA2528::StartUp_TLA2528(twowire));
+  RGB_LED::begin();
 }
 
 void loop()
 {
-  TLA2528::man_CHA_Read(twowire,V_15);
+  RGB_LED::setColor(255,255,255);
+  USBSerial.println("Voltage: ");
+  USBSerial.println(TLA2528::man_CHA_Read(twowire,V_15));
+  USBSerial.println(TLA2528::man_CHA_Read(twowire,V_3_3));
+  USBSerial.println(TLA2528::man_CHA_Read(twowire,V_TANK));
+  delay(1000);
 }
 #endif
 
@@ -54,14 +65,14 @@ DallasTemperature*temp=new DallasTemperature(onewire);
 
 void setup()
 {
-  Serial.begin(115200);
+  USBSerial.begin(115200);
   temp->begin();
 }
 
 void loop()
 {
   float ergebnis=MAX31820::readTemperature(*temp);
-  Serial.println(ergbnis);
+  USBSerial.println(ergbnis);
 }
 #endif
 
@@ -73,7 +84,7 @@ State_Machine fsm;
 
 void setup()
 {
-  Serial.begin(115200);
+  USBSerial.begin(115200);
 }
 
 void loop()
@@ -123,6 +134,6 @@ void setup()
   // Setzen des Stops
   //esp_timer_stop(periodic_timer);
   
-  Serial.begin(115200);
+  USBSerial.begin(115200);
 }
 *********************************************************************************************************/
