@@ -5,11 +5,12 @@ State_Machine fsm;
 
 void setup()
 {
-  Serial.begin(115200);
+  USBSerial.begin(115200);
 }
 
 void loop()
 {
+  USBSerial.print(".");
   /*  while Schleife der Routine  */
   fsm.Update();
 }

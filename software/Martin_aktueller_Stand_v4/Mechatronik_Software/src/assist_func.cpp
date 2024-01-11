@@ -42,3 +42,25 @@ namespace DISP_FKT
     display->display();
   }
 }
+
+
+
+
+namespace RGB_LED
+{
+  CRGB StatusLED[1];
+  void begin()
+  {
+    
+    FastLED.addLeds<WS2812, RGBLED, GRB>(StatusLED, 1);
+    StatusLED[0] = CRGB(255, 0, 0);
+    FastLED.show();
+  }
+
+
+  void setColor(uint8_t red, uint8_t green, uint8_t blue)
+  {
+    StatusLED[0] = CRGB(red, green, blue);
+    FastLED.show();
+  }
+}

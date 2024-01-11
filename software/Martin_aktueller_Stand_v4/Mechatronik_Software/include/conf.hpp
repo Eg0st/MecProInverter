@@ -127,6 +127,7 @@ CHANNEL DEFINITION TLA25528
 #define I_TRIP 28           //wofür
 
 // TEST-Definitionen
-#define PWM_TEST
+//#define PWM_TEST
+#define ADC_TEST
 
 #endif
