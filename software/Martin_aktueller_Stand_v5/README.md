@@ -15,3 +15,8 @@ OneWire Bus programm for the temperature sensor
 
 * bugfixes
 * einfügen von Testanweisungen
+
+# Martin_aktueller_Stand_v5 of 11.01.2024
+
+* fehler in Code bei foc behoben
+* bei startup inTLA25528 eine error Anweisung entfernt
