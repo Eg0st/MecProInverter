@@ -30,7 +30,7 @@
 #define ISO_GPIO_1 21
 #define ISO_GPIO_2 38
 
-#define I_TRIP 28
+#define I_TRIP 33
 #define SPI_CS 34
 #define SPI_MOSI 35
 #define SPI_CLK 36
@@ -39,7 +39,7 @@
 #define FAN1_PWM_FB 48
 #define FAN2_PWM_FB 47
 
-
+bool state = 0;
 
 int inverter_frequency = 0;
 CRGB leds[1];
@@ -58,6 +58,22 @@ void setup() {
   pinMode(SW2, INPUT);
   pinMode(SW3, INPUT);
 
+  pinMode(LINW,OUTPUT);
+  pinMode(HINW,OUTPUT);
+  pinMode(LINV,OUTPUT);
+  pinMode(HINV,OUTPUT);
+  pinMode(LINU,OUTPUT);
+  pinMode(HINU,OUTPUT);
+  digitalWrite(LINW, LOW);
+  digitalWrite(HINW, HIGH);
+  digitalWrite(LINV, HIGH);
+  digitalWrite(HINV, LOW);
+  digitalWrite(LINU, LOW);
+  digitalWrite(HINU, HIGH);
+
+
+  pinMode(I_TRIP, OUTPUT);
+  digitalWrite(I_TRIP, LOW);
 
   pinMode(RELAY_SHUNT_AC, OUTPUT);
   pinMode(FAN_CONTROL_PIN, OUTPUT);
@@ -70,14 +86,26 @@ void loop() {
   USBSerial.println(millis());
   USBSerial.print("[INFO] Poti: ");
   USBSerial.println(analogRead(POT1));
-  inverter_frequency = map(analogRead(POT1), 0, 4096, 0, 500);
+  inverter_frequency = map(analogRead(POT1), 0, 4096, 0, 501);
   USBSerial.print("[INFO] Intverter frequency: ");
   USBSerial.println(inverter_frequency);
 
 
-  digitalWrite(RELAY_SHUNT_AC, LOW);
+  digitalWrite(RELAY_SHUNT_AC, HIGH);
   digitalWrite(FAN_CONTROL_PIN, HIGH);
 
+  if(state)
+  {
+    digitalWrite(LINW, LOW);
+    digitalWrite(HINW, HIGH);
+    state = 0;
+  }
+  else
+  {
+    digitalWrite(LINW, HIGH);
+    digitalWrite(HINW, LOW);
+    state = 1;
+  }
 
   leds[0] = CRGB(0, 255, 0);
 
@@ -98,5 +126,5 @@ void loop() {
 
   FastLED.show();
 
-  delay(1000);
+  delay(10);
 }

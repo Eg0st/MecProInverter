@@ -14,6 +14,13 @@
 #include "foc_pwm.hpp"
 #define FREQUENZ 50
 
+#include "sensor_func.hpp"
+#define I2C_SDA 8
+#define I2C_SLK 9
+
+TwoWire*twowire=new TwoWire(BUS_NUM);
+
+
 BLDCDriver6PWM*driver;
 BLDCMotor*motor;
 
@@ -26,14 +33,39 @@ void setup()
   USBSerial.println("Test");
    //FOC::init(driver,motor);
   USBSerial.println("Test");
-  
+
+  pinMode(I_TRIP, OUTPUT);
+  digitalWrite(I_TRIP, LOW);
+
+  pinMode(RELAY_SHUNT_AC, OUTPUT);
+  digitalWrite(RELAY_SHUNT_AC, HIGH);
+  USBSerial.println(TLA2528::StartUp_TLA2528(twowire));
 }
 
 void loop()
 {
-  //USBSerial.print(".");
+  //USBUSBSerial.print(".");
   FOC::PWM_Generation(motor,2*PI*FREQUENZ);
-  
+
+
+  uint16_t voltage_15_bit = TLA2528::man_CHA_Read(twowire,V_15);
+  float voltage_15_volt = (voltage_15_bit / 3029.39);
+  USBSerial.print("Volatge 15 Volt: ");
+  USBSerial.print(voltage_15_volt);
+  USBSerial.print(" V\n");
+
+  uint16_t voltage_3_3_bit = TLA2528::man_CHA_Read(twowire,V_3_3);
+  float voltage_3_3_volt = (voltage_3_3_bit / 15276.46);
+  USBSerial.print("Volatge 3.3 Volt: ");
+  USBSerial.print(voltage_3_3_volt);
+  USBSerial.print(" V\n");
+
+  uint16_t voltage_TANK_bit = TLA2528::man_CHA_Read(twowire,V_TANK);
+  float voltage_TANK_volt = (voltage_TANK_bit / 163.14);
+  USBSerial.print("Volatge TANK Volt: ");
+  USBSerial.print(voltage_TANK_volt);
+  USBSerial.print(" V\n");
+
 }
 
 #endif
@@ -45,16 +77,57 @@ void loop()
 
 TwoWire*twowire=new TwoWire(BUS_NUM);
 
+
+
 void setup()
 {
-  Serial.begin(115200);
+  USBSerial.begin(115200);
   twowire->begin(I2C_SDA,I2C_SLK);
-  TLA2528::StartUp_TLA2528(twowire);
+
+    pinMode(LINW,OUTPUT);
+    pinMode(HINW,OUTPUT);
+    pinMode(LINV,OUTPUT);
+    pinMode(HINV,OUTPUT);
+    pinMode(LINU,OUTPUT);
+    pinMode(HINU,OUTPUT);
+    digitalWrite(LINW, LOW);
+    digitalWrite(HINW, HIGH);
+    digitalWrite(LINV, HIGH);
+    digitalWrite(HINV, LOW);
+    digitalWrite(LINU, LOW);
+    digitalWrite(HINU, HIGH);
+
+  pinMode(I_TRIP, OUTPUT);
+  digitalWrite(I_TRIP, LOW);
+
+  pinMode(RELAY_SHUNT_AC, OUTPUT);
+  digitalWrite(RELAY_SHUNT_AC, HIGH);
+  USBSerial.println(TLA2528::StartUp_TLA2528(twowire));
 }
 
 void loop()
 {
-  TLA2528::man_CHA_Read(twowire,V_15);
+  uint16_t voltage_15_bit = TLA2528::man_CHA_Read(twowire,V_15);
+  float voltage_15_volt = (voltage_15_bit / 3029.39);
+  USBSerial.print("Volatge 15 Volt: ");
+  USBSerial.print(voltage_15_volt);
+  USBSerial.print(" V\n");
+
+  uint16_t voltage_3_3_bit = TLA2528::man_CHA_Read(twowire,V_3_3);
+  float voltage_3_3_volt = (voltage_3_3_bit / 15276.46);
+  USBSerial.print("Volatge 3.3 Volt: ");
+  USBSerial.print(voltage_3_3_volt);
+  USBSerial.print(" V\n");
+
+  uint16_t voltage_TANK_bit = TLA2528::man_CHA_Read(twowire,V_TANK);
+  float voltage_TANK_volt = (voltage_TANK_bit / 163.14);
+  USBSerial.print("Volatge TANK Volt: ");
+  USBSerial.print(voltage_TANK_volt);
+  USBSerial.print(" V\n");
+
+  delay(1000);
+
+
 }
 #endif
 
@@ -65,14 +138,14 @@ DallasTemperature*temp=new DallasTemperature(onewire);
 
 void setup()
 {
-  Serial.begin(115200);
+  USBSerial.begin(115200);
   temp->begin();
 }
 
 void loop()
 {
   float ergebnis=MAX31820::readTemperature(*temp);
-  Serial.println(ergbnis);
+  USBSerial.println(ergbnis);
 }
 #endif
 
@@ -84,7 +157,7 @@ State_Machine fsm;
 
 void setup()
 {
-  Serial.begin(115200);
+  USBSerial.begin(115200);
 }
 
 void loop()
@@ -134,6 +207,6 @@ void setup()
   // Setzen des Stops
   //esp_timer_stop(periodic_timer);
   
-  Serial.begin(115200);
+  USBSerial.begin(115200);
 }
 *********************************************************************************************************/

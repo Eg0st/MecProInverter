@@ -124,7 +124,7 @@ CHANNEL DEFINITION TLA25528
 
 #define ISO_GPIO_1 21       //wofür
 #define ISO_GPIO_2 38       //wofür
-#define I_TRIP 28           //wofür
+#define I_TRIP 33           //wofür
 
 // TEST-Definitionen
 #define PWM_TEST

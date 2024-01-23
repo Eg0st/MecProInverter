@@ -52,7 +52,7 @@ namespace RGB_LED
   void begin()
   {
     
-    FastLED.addLeds<WS2812, RGBLED, GRB>(StatusLED, 1);
+    FastLED.addLeds<WS2812, CRGB, GRB>(StatusLED, 1);
     StatusLED[0] = CRGB(255, 0, 0);
     FastLED.show();
   }
